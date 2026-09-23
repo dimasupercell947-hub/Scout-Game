@@ -1,0 +1,23 @@
+{
+  "name": "scout-game",
+  "version": "1.0.0",
+  "description": "Offline CS2 esports manager game",
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "dist": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.scoutgame.manager",
+    "productName": "Scout Game",
+    "files": ["index.html", "main.cjs", "package.json"],
+    "win": { "target": ["nsis", "portable"] },
+    "nsis": { "oneClick": true, "perMachine": false }
+  }
+}
